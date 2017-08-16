@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS artist;
+DROP TABLE IF EXISTS album;
+
+CREATE TABLE artist (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255)
+);
+
+CREATE TABLE album (
+  id SERIAL PRIMARY KEY,
+  artist_id INT REFERENCES artist(id),
+  title VARCHAR(255),
+  genre VARCHAR(255)
+);
