@@ -34,6 +34,18 @@ class Artist
       results = SqlRunner.run(sql, values)
       @id = results[0]['id'].to_i()
     end
+    # Why won't this work?!?!
+    def update()
+      sql = '
+      UPDATE artist SET(
+      name
+      ) = (
+      $1
+      )
+      WHERE id = $2;'
+      values = [@name, @id]
+      SqlRunner.run(sql, values)
+    end
 
     def Artist.all
       sql = 'SELECT * FROM artist;'
