@@ -41,7 +41,7 @@ class Album
   def Album.all
     sql = 'SELECT * FROM album;'
     results = SqlRunner.run(sql)
-    albums = results.map {|albums_hash| Album.new(album_hash)}
+    albums = results.map {|albums_hash| Album.new(albums_hash)}
     return albums
   end
 
